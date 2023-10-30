@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Qface | Log in</title>
+    <title>Qface | Signup</title>
   </head>
   <style>
     #blue_background {
@@ -47,21 +47,47 @@
   </style>
   <body style="font-family: tahoma; background-color: #e9ebee">
     <div id="blue_background">
-      <div style="font-size: 40px">Qface</div>
-      <div id="signup_button">Sign Up</div>
+      <div style="font-size: 40px">Qface</div><br />
+      <div id="signup_button">Log in</div>
     </div>
     <div id="login_bar">
-      Log in to Qface <br /><br />
+      Sign up to Qface <br /><br />
+      <input
+        type="text"
+        id="text"
+        name="Surname"
+        placeholder="Surname"
+      /><br />
+      <input
+        type="text"
+        id="text"
+        name="Middle name"
+        placeholder="Middle name"
+      /><br />
+      <input
+        type="text"
+        id="text"
+        name="First name"
+        placeholder="First name"
+      /><br />
+      <br />
+     <span style="font-weight: normal;"> Gender:</span><br />
+   <select id="text">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+   </select><br />
+      <br />
       <input
         type="text"
         id="text"
         name="Email address or phone number"
         placeholder="Email adress or phone number"
       /><br />
-      <br />
       <input type="password" id="text" name="Password" placeholder="Password" />
+      <br />
+      <input type="password" id="text" name="Password" placeholder="Re-type password" />
       <br /><br />
-      <input type="submit" id="submit" value="Log in" /><br /><br />
+      <input type="submit" id="submit" value="Sign up" /><br /><br />
       <br /><br />
     </div>
   </body>
