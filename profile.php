@@ -32,6 +32,19 @@ color:#d9dfeb;
      display: inline-block;
      margin: 2px;
     }
+    #friends_img{
+     width: 75px;
+     float: left;
+     margin: 4px;
+    }
+    #friends_bar{
+     background-color:white;
+     margin-top: 20px;
+     min-height: 400px;
+     padding: 8px;
+     color:#aaa
+     
+    }
 </style>
  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  background-color: #d0d8e4;">
 
@@ -44,7 +57,7 @@ color:#d9dfeb;
  </div>
 </div>
  <!-- Cover area-->
- <div  style="width:800px; margin:auto; background-color: black; min-height:  400px;">
+ <div  style="width:800px; margin:auto;  min-height:  400px;">
 <div style="background-color: white; text-align: center; color:#405d9b;">
 <img src="mountain.jpg" style="width: 100%;">
 <img src="selfie.jpg" id="profile_pic">
@@ -58,8 +71,19 @@ Catherine Lawson
 </div>
 <!-- The 2 columns -->
 <div style="display:flex;">
-<div style="background-color: grey; min-height: 500px; flex:1;"></div>
-<div style="background-color: green; min-height: 500px; flex:2.6"></div>
+<!-- Friends area -->
+<div style=" min-height: 500px; flex:1;">
+<div id="friends_bar">
+ Friends<br/>
+ <div id="friends">
+  <img id="friends_img" src="user1.jpg">
+  <br/>
+  Josh Kamrudeen<br/>
+</div>
+</div>
+</div>
+<!-- Posts area-->
+<div style=" min-height: 500px; flex:2.6"></div>
 </div>
 
  </div>
