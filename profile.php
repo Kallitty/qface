@@ -21,6 +21,17 @@ color:#d9dfeb;
       background-repeat: no-repeat;
       background-position: right;
     }
+    #profile_pic{
+     width: 150px;
+     margin-top: -200px;
+     border-radius:50%;
+     border: solid 2px white;
+    }
+    #menu_button{
+     width: 100px;
+     display: inline-block;
+     margin: 2px;
+    }
 </style>
  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  background-color: #d0d8e4;">
 
@@ -36,7 +47,21 @@ color:#d9dfeb;
  <div  style="width:800px; margin:auto; background-color: black; min-height:  400px;">
 <div style="background-color: white; text-align: center; color:#405d9b;">
 <img src="mountain.jpg" style="width: 100%;">
+<img src="selfie.jpg" id="profile_pic">
+<br/>
+Catherine Lawson
+<br/>
+<div id="menu_button">About</div>  
+<div  id="menu_button">Friends </div>
+<div  id="menu_button">Photos </div>
+<div  id="menu_button">Settings</div>
 </div>
+<!-- The 2 columns -->
+<div style="display:flex;">
+<div style="background-color: grey; min-height: 500px; flex:1;"></div>
+<div style="background-color: green; min-height: 500px; flex:2.6"></div>
+</div>
+
  </div>
 </body>
 </html>

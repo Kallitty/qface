@@ -14,7 +14,7 @@
       background-color: #42b72a;
       border-radius: 4px;
       padding: 4px;
-      float: inline-start;
+      float: right;
     }
     #login_bar {
       background-color: white;
