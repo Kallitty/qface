@@ -43,8 +43,30 @@ color:#d9dfeb;
      min-height: 400px;
      padding: 8px;
      color:#aaa
-     
-    }
+     }
+      #friends{
+  clear:both;
+     padding: 2px;
+     font-size: 12px;
+     font-weight:bold;
+     color:#405d9b;
+     }
+     textarea{
+      width:100%;
+      border:none;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 14px;
+     }
+     #post_button{
+      float: right;
+      background-color: #405d9b;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      padding: 2px;
+      font-size: 14px;
+      width:40px ;
+     }
 </style>
  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  background-color: #d0d8e4;">
 
@@ -80,10 +102,33 @@ Catherine Lawson
   <br/>
   Josh Kamrudeen<br/>
 </div>
+<div id="friends">
+  <img id="friends_img" src="user4.jpg">
+  <br/>
+  Kallie Estate<br/>
+</div>
+<div id="friends">
+  <img id="friends_img" src="user3.jpg">
+  <br/>
+  Peters Kangaroo<br/>
+</div><div id="friends">
+  <img id="friends_img" src="user2.jpg">
+  <br/>
+  Bush George<br/>
+</div>
+
 </div>
 </div>
 <!-- Posts area-->
-<div style=" min-height: 500px; flex:2.6"></div>
+<div style=" min-height: 500px; flex:2.6"; padding: 20px;>
+<div style="border: 1px solid #aaa; padding: 10px;">
+<textarea placeholder="What is on your mind?"></textarea>
+<input id="post_button" type="submit" name="" value="Post">
+<br>
+</div>
+</div>
+
+</div>
 </div>
 
  </div>
