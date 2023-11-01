@@ -68,6 +68,17 @@ color:#d9dfeb;
       font-size: 14px;
       width:40px ;
      }
+     #post_bar{
+     margin-top: 20px;
+      background-color: white;
+      padding: 10px;
+     }
+     #post{
+      padding: 4px;
+      font-size: 13px;
+      display: flex;
+      margin-bottom: 20px;
+     }
 </style>
  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  background-color: #d0d8e4;">
 
@@ -127,11 +138,50 @@ Catherine Lawson
 <input id="post_button" type="submit" name="" value="Post">
 <br>
 </div>
+
+
+<!-- Posts-->
+<div  id="post_bar">
+  <!-- Post 1-->
+  <div id="post">
+    <div>
+      <img src="user1.jpg" style="width:75px; margin-right: 4px; flex:1; "; />
+  </div>
+<div style="flex:5;">
+
+<div style="font-weight: bold; color:#405d9b;">
+  Josh Kamrudeen
 </div>
+   A customer is trying to make a transfer of 5m using the app,
+It was set up today (app and soft token), it keeps saying token authentication failed and it’s really urgent he makes the transfer.<br/><br/>
+<a href="">Like  </a> . <a href="">Comment  </a> . <span style="color:#999;">November 1 2023</span>
+</div>
+</div>
+
+<!-- Post 2-->
+  <div id="post">
+    <div>
+      <img src="user2.jpg" style="width:75px; margin-right: 4px; flex:1; "; />
+  </div>
+<div style="flex:5;">
+
+<div style="font-weight: bold; color:#405d9b;">
+  Bush George
+</div>
+🔑📖 KEY VERSE: "So we, being many, are one body in Christ, and every one members one of another” (ROMANS 12:5).
+
+     We attach much importance to love, and read lots of meaning to it, most of which are unnecessary. The real object of our love should be towards God first and then to the people around us. It is assumed that we already love ourselves. God, therefore, wants us to direct the remaining love in our hearts to our brethren and other people around us.<br/><br/>
+<a href="">Like  </a> . <a href="">Comment  </a> . <span style="color:#999;">November 1 2023</span>
+</div>
+</div>
+
+
+  </div>
+</div> <br/><br/>
+
 
 </div>
 </div>
-
- </div>
+</div>
 </body>
 </html>
