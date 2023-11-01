@@ -56,6 +56,7 @@ color:#d9dfeb;
       border:none;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       font-size: 14px;
+      height: 60px;
      }
      #post_button{
       float: right;
@@ -121,7 +122,7 @@ Catherine Lawson
 </div>
 <!-- Posts area-->
 <div style=" min-height: 500px; flex:2.6"; padding: 20px;>
-<div style="border: 1px solid #aaa; padding: 10px;">
+<div style="border: 1px solid #aaa; padding: 10px; background-color:white;">
 <textarea placeholder="What is on your mind?"></textarea>
 <input id="post_button" type="submit" name="" value="Post">
 <br>
