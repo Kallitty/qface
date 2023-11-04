@@ -6,9 +6,17 @@ $password="";
 $db="qface_db";
 
 $connection=mysqli_connect($host, $username,$password, $db);
-$first_name="Kangaroo";
-$last_name="Peters";
-$query= "insert into users(first_name,last_name) values('$first_name', '$last_name')";
-mysqli_query($connection, $query);
+
+$query= "select * from users";
+$result=mysqli_query($connection, $query);
+
+while($row=mysqli_fetch_assoc($result))
+{
+echo "<pre>";
+print_r($row);
+echo "</pre>";
+}
+
+
 
 ?> 
