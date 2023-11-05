@@ -1,3 +1,12 @@
+<?php
+if ($_SERVER['REQUEST_METHOD']=='POST'){
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+}
+
+?>
+
 <html>
   <head>
     <title>Qface | Signup</title>
@@ -52,43 +61,47 @@
     </div>
     <div id="login_bar">
       Sign up to Qface <br /><br />
-      <input
-        type="text"
-        id="text"
-        name="Surname"
-        placeholder="Surname"
-      /><br />
-      <input
-        type="text"
-        id="text"
-        name="Middle name"
-        placeholder="Middle name"
-      /><br />
-      <input
-        type="text"
-        id="text"
-        name="First name"
-        placeholder="First name"
-      /><br />
-      <br />
-     <span style="font-weight: normal;"> Gender:</span><br />
-   <select id="text">
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-   </select><br />
-      <br />
-      <input
-        type="text"
-        id="text"
-        name="Email address or phone number"
-        placeholder="Email adress or phone number"
-      /><br />
-      <input type="password" id="text" name="Password" placeholder="Password" />
-      <br />
-      <input type="password" id="text" name="Password" placeholder="Re-type password" />
-      <br /><br />
-      <input type="submit" id="submit" value="Sign up" /><br /><br />
-      <br /><br />
+
+      <form method="post" action="">
+          <input
+            type="text"
+            id="text"
+            name="Surname"
+            placeholder="Surname"
+          /><br />
+          <input
+            type="text"
+            id="text"
+            name="Middle_name"
+            placeholder="Middle name"
+          /><br />
+          <input
+            type="text"
+            id="text"
+            name="First_name"
+            placeholder="First name"
+          /><br />
+          <br />
+        <span style="font-weight: normal;"> Gender:</span><br />
+       <select id="text" name="Gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+       </select><br />
+          <br />
+          <input
+            type="text"
+            id="text"
+            name="Email_address_or_phone_number"
+            placeholder="Email adress or phone number"
+          /><br />
+          <input type="password" id="text" name="Password" placeholder="Password" />
+          <br />
+          <input type="password" id="text" name="Password2" placeholder="Re-type password" />
+          <br /><br />
+          <input type="submit" id="submit" value="Sign up" /><br /><br />
+          <br /><br />
+
+      </form>
     </div>
   </body>
 </html>
