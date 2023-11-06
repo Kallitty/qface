@@ -3,18 +3,29 @@
 include_once("classes/connect.php");
 include_once("classes/signup.php");
 
+      $first_name="";
+      $middle_name="";
+      $surname="";
+      $gender="";
+      $email_address_or_phone_number="";
+
 if ($_SERVER['REQUEST_METHOD']=='POST'){
   $signup = new Signup();
   $result=$signup->evaluate($_POST);
-  
-if ($result !=""){
-echo "<pre>";
-print_r($result);
-echo "</pre>";
-}
-}
+  if($result !=""){
+    echo"<div style='text-align:center; font-size: 12px; color:white; background-color:grey;'>";
+   echo "The following errors occured: <br><br>";
+   echo $result;
+   echo"</div>";
+  }
+      $first_name=$_POST['first_name'];
+      $middle_name=$_POST['middle_name'];
+      $surname=$_POST['surname'];
+      $gender=$_POST['gender'];
+      $email_address_or_phone_number=$_POST['email_address_or_phone_number'];
 
-
+}
+      
 ?>
 
 <html>
@@ -74,39 +85,43 @@ echo "</pre>";
 
       <form method="post" action="">
           <input
+            value='<?php echo $surname?>'
             type="text"
             id="text"
-            name="Surname"
+            name="surname"
             placeholder="Surname"
           /><br />
           <input
+          value='<?php echo $middle_name?>'
             type="text"
             id="text"
-            name="Middle_name"
+            name="middle_name"
             placeholder="Middle name"
           /><br />
           <input
+          value='<?php echo $first_name?>'
             type="text"
             id="text"
-            name="First_name"
+            name="first_name"
             placeholder="First name"
           /><br />
           <br />
         <span style="font-weight: normal;"> Gender:</span><br />
-       <select id="text" name="Gender">
+       <select value='<?php echo $gender?>'id="text" name="gender">
         <option value="Male">Male</option>
         <option value="Female">Female</option>
        </select><br />
           <br />
           <input
+          value='<?php echo $email_address_or_phone_number?>'
             type="text"
             id="text"
-            name="Email_address_or_phone_number"
+            name="email_address_or_phone_number"
             placeholder="Email address or phone number"
           /><br />
-          <input type="password" id="text" name="Password" placeholder="Password" />
+          <input type="password" id="text" name="password" placeholder="Password" />
           <br />
-          <input type="password" id="text" name="Password2" placeholder="Re-type password" />
+          <input type="password" id="text" name="password2" placeholder="Re-type password" />
           <br /><br />
           <input type="submit" id="submit" value="Sign up" /><br /><br />
           <br /><br />

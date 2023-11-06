@@ -18,17 +18,18 @@ $this->create_user($data);
  }
  public function create_user($data){
   $firstname=$data['first_name'];
-  $lastname=$data['last_name'];
+  $surname=$data['sur_name'];
+  $middlename=$data['middle_name'];
   $gender=$data['gender'];
   $email=$data['email'];
   $password=$data['password'];
   //created these, take note
-  $url_address=strtolower($firstname) ."." . strtolower($lastname);
+  $url_address=strtolower($firstname) ."." . strtolower($surname);
   $userid=$data['create_userid'];
 
 
 
-  $query="insert into users(userid, first_name, last_name, gender, email, password, url_address) values('$userid', '$firstname', '$lastname', '$gender', '$email', '$password', '$url_address')";
+  $query="insert into users(userid, first_name, sur_name, gender, email, password, url_address, middle_name) values('$userid', '$firstname', '$surname', '$gender', '$email', '$password', '$url_address', '$middlename')";
   return $query;
   //$DB=new Database();
   //$DB->save($query);
