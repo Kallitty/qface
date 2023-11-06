@@ -28,18 +28,18 @@ $this->create_user($data);
   $userid=$this->create_userid();
 
   $query="insert into users(userid, first_name, sur_name, gender, email_address_or_phone_number, password, url_address, middle_name) values('$userid', '$first_name', '$surname', '$gender', '$email_address_or_phone_number', '$password', '$url_address', '$middle_name')";
-  echo $query;
-  // $DB=new Database();
-  // $DB->save($query);
+  // echo $query;
+  $DB=new Database();
+  $DB->save($query);
  }
- //userid wahala
+ //userid loop
  private  function create_userid(){
   $length=rand(4, 19);
   $number ="";
   for ($i=0; $i< $length; $i++){
 $new_rand= rand(0,9);
 $number = $number . $new_rand;
-return $number;
   }
+  return $number;
  }
 }
