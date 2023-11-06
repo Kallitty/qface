@@ -107,7 +107,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
           /><br />
           <br />
         <span style="font-weight: normal;"> Gender:</span><br />
-       <select value='<?php echo $gender?>'id="text" name="gender">
+       <select  id="text" name="gender">
+       
+        <option> <?php echo $gender?></option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
        </select><br />
