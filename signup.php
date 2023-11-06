@@ -1,9 +1,19 @@
 <?php
+
+include_once("classes/connect.php");
+include_once("classes/signup.php");
+
 if ($_SERVER['REQUEST_METHOD']=='POST'){
+  $signup = new Signup();
+  $result=$signup->evaluate($_POST);
+  
+if ($result !=""){
 echo "<pre>";
-print_r($_POST);
+print_r($result);
 echo "</pre>";
 }
+}
+
 
 ?>
 
@@ -92,7 +102,7 @@ echo "</pre>";
             type="text"
             id="text"
             name="Email_address_or_phone_number"
-            placeholder="Email adress or phone number"
+            placeholder="Email address or phone number"
           /><br />
           <input type="password" id="text" name="Password" placeholder="Password" />
           <br />
