@@ -4,9 +4,16 @@ class Signup{
  private $error="";
  public function evaluate($data){
  foreach ($data as $key=>$value){
+  #checks
   if (empty($value)){
    $this->error= $this->error . $key . "Kindly input field</br>";
   }
+  if ($key=="email"){
+   if(!preg_match("'/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})*$/';", $value)){
+    $this->error= $this->error . "invalid email address!</br>";
+   }
+  }
+  
  }
  if ($this->error ==""){
 // no error
@@ -27,7 +34,7 @@ $this->create_user($data);
   $url_address=strtolower($first_name) ."." . strtolower($surname);
   $userid=$this->create_userid();
 
-  $query="insert into users(userid, first_name, sur_name, gender, email_address_or_phone_number, password, url_address, middle_name) values('$userid', '$first_name', '$surname', '$gender', '$email_address_or_phone_number', '$password', '$url_address', '$middle_name')";
+  $query="insert into users(userid, first_name, surname, gender, email_address_or_phone_number, password, url_address, middle_name) values('$userid', '$first_name', '$surname', '$gender', '$email_address_or_phone_number', '$password', '$url_address', '$middle_name')";
   // echo $query;
   $DB=new Database();
   $DB->save($query);
