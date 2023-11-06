@@ -13,8 +13,18 @@ class Signup{
     $this->error= $this->error . "invalid email address!</br>";
    }
   }
-  
- }
+
+ }if ($key=="first_name"){
+   if(is_numeric($value)){
+    $this->error= $this->error . "First name can not be a number!</br>";
+   }
+  }
+
+  if ($key=="surname"){
+   if(is_numeric($value)){
+    $this->error= $this->error . "Surname can not be a number!</br>";
+   }
+  }
  if ($this->error ==""){
 // no error
 $this->create_user($data);
