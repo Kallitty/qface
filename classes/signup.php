@@ -9,7 +9,8 @@ class Signup{
    $this->error= $this->error . $key . "Kindly input field</br>";
   }
   if ($key=="email"){
-   if(!preg_match("'/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})*$/';", $value)){
+   // if(!preg_match("'/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})*$/';", $value)){
+     if(!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $value)){
     $this->error= $this->error . "invalid email address!</br>";
    }
   }
