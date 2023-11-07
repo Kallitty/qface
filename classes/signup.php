@@ -25,6 +25,10 @@ class Signup{
     $this->error= $this->error . "Surname can not be a number!</br>";
    }
   }
+//check for password
+// if($value['password'] == $value['confirmpassword']) {
+// invalid email...
+
  if ($this->error ==""){
 // no error
 $this->create_user($data);
