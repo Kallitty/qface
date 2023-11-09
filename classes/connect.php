@@ -36,9 +36,9 @@ return $data;
  }
 }
 
-// $DB= new Database();
-// $query="select * from users";
-// $data= $DB->read($query);
+$DB= new Database();
+$query="select * from users";
+$data= $DB->read($query);
 
 
 

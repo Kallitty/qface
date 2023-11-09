@@ -21,7 +21,7 @@ class Signup{
                 $this->error = $this->error . "First name can not be a number!</br>";  
             } 
             //checks for empty spaces
-            if (strstr($value, "")) {
+             if (empty(trim($value))) {
                 $this->error = $this->error . "First name can not be empty!</br>";
             }
             }
@@ -32,7 +32,7 @@ class Signup{
                 $this->error = $this->error . "Surname can not be a number!</br>";  
             } 
             //checks for empty spaces
-            if (strstr($value, "")) {
+             if (empty(trim($value))) {
                 $this->error = $this->error . "Surname can not be empty!</br>";
             }
             }
