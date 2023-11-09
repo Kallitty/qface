@@ -16,13 +16,25 @@ class Signup{
                 }
             }
             
-
-            if ($key == "first_name" && is_numeric($value)) {
-                $this->error = $this->error . "First name can not be a number!</br>";
+            if ($key == "first_name"){
+             if (is_numeric($value)) {
+                $this->error = $this->error . "First name can not be a number!</br>";  
+            } 
+            //checks for empty spaces
+            if (strstr($value, "")) {
+                $this->error = $this->error . "First name can not be empty!</br>";
             }
+            }
+         
 
-            if ($key == "surname" && is_numeric($value)) {
-                $this->error = $this->error . "Surname can not be a number!</br>";
+            if ($key == "surname"){
+             if (is_numeric($value)) {
+                $this->error = $this->error . "Surname can not be a number!</br>";  
+            } 
+            //checks for empty spaces
+            if (strstr($value, "")) {
+                $this->error = $this->error . "Surname can not be empty!</br>";
+            }
             }
         }
 
@@ -35,9 +47,9 @@ class Signup{
     }
 
     public function create_user($data){
-        $first_name = $data['first_name'];
-        $surname = $data['surname'];
-        $middle_name = $data['middle_name'];
+        $first_name = ucfirst($data['first_name']);
+        $surname = ucfirst($data['surname']);
+        $middle_name = ucfirst($data['middle_name']);
         $gender = $data['gender'];
         $email_address_or_phone_number = $data['email_address_or_phone_number'];
         $password = $data['password'];
