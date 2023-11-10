@@ -56,7 +56,7 @@
         type="text"
         id="text"
         name="Email address or phone number"
-        placeholder="Email adress or phone number"
+        placeholder="Email address or phone number"
       /><br />
       <br />
       <input type="password" id="text" name="Password" placeholder="Password" />
