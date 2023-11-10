@@ -36,7 +36,18 @@ return $data;
  }
 }
 
-$DB= new Database();
-$query="select * from users";
-$data= $DB->read($query);
+//online resource
+// $DB= new Database();
+// $query="select * from users";
+// $data= $DB->read($query);
+
+
+// $success = $DB->save($query);
+
+// if ($success) {
+//     echo "Data saved successfully!";
+// } else {
+//     echo "Error saving data.";
+// }
+
 ?> 

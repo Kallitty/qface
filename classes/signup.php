@@ -61,7 +61,9 @@ class Signup{
 
         $query = "insert into users(userid, first_name, surname, gender, email_address_or_phone_number, password, url_address, middle_name) values('$userid', '$first_name', '$surname', '$gender', '$email_address_or_phone_number', '$password', '$url_address', '$middle_name')";
 
+
         // Execute your database query here
+        
     }
 
     private function create_userid(){
