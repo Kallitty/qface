@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
    echo $result;
    echo"</div>";
   }else{
-    header("Location:profile.php");
+    header("Location:login.php");
     die;
   }
       $first_name=$_POST['first_name'];

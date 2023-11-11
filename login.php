@@ -1,3 +1,29 @@
+<?php
+
+include_once("classes/connect.php");
+include_once("classes/login.php");
+
+  $email_address_or_phone_number="";
+  $password="";
+    
+if ($_SERVER['REQUEST_METHOD']=='POST'){
+  $login = new Login();
+  $result=$login->evaluate($_POST);
+  if($result !=""){
+    echo"<div style='text-align:center; font-size: 12px; color:white; background-color:grey;'>";
+   echo "The following errors occured: <br><br>";
+   echo $result;
+   echo"</div>";
+  }else{
+    header("Location:profile.php");
+    die;
+  }
+      $password=$_POST['first_name'];
+      $email_address_or_phone_number=$_POST['email_address_or_phone_number'];
+
+}
+      
+?>
 <html>
   <head>
     <title>Qface | Log in</title>
@@ -53,9 +79,10 @@
     <div id="login_bar">
       Log in to Qface <br /><br />
       <input
+          value='<?php echo $email_address_or_phone_number?>'
         type="text"
         id="text"
-        name="Email address or phone number"
+        name="email_address_or_phone_number"
         placeholder="Email address or phone number"
       /><br />
       <br />
