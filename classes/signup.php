@@ -63,8 +63,34 @@ class Signup{
 
 
         // Execute your database query here
-        
+        $DB = new Database();
+$result = $DB->save($query);
+
+// Check if the query was executed successfully
+if ($result) {
+    // Redirect or display a success message
+    header("Location: profile.php");
+     
+    die;
+} else {
+    // Display an error message
+    echo "Something went wrong, user was not created.";
+}
     }
+
+    //online resource
+// $DB= new Database();
+// $query="select * from users";
+// $data= $DB->read($query);
+
+
+// $success = $DB->save($query);
+
+// if ($success) {
+//     echo "Data saved successfully!";
+// } else {
+//     echo "Error saving data.";
+// }
 
     private function create_userid(){
         $length = rand(4, 19);
