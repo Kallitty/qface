@@ -43,13 +43,16 @@ if ($result) {
     // Redirect or display a success message
     $row=$result[0];
     if($password==$row['password']){
-    }else{
-     $error .="wrong password! <br>";
+//create session data
+$_SESSION['userid']=$row['userid'];
+    }else
+    {
+     $this->error = $this->error ."Wrong password! <br>";
     }
      
 } else {
     // Display an error message
-    $error.="User not found for the details provided <br>";
+    $this->error = $this->error."User not found for the details provided <br>";
 }
     }
 
