@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include_once("classes/connect.php");
 include_once("classes/login.php");

@@ -67,6 +67,4 @@ $_SESSION['userid']=$row['userid'];
     }
 }
 
-
-
 ?>
