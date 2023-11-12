@@ -41,12 +41,15 @@ $result = $DB->read($query);
 // Check if the query was executed successfully
 if ($result) {
     // Redirect or display a success message
-    header("Location: profile.php");
+    $row=$result[0];
+    if($password==$row['password']){
+    }else{
+     $error .="wrong password! <br>";
+    }
      
-    die;
 } else {
     // Display an error message
-    echo "Something went wrong, user was not created.";
+    $error.="User not found for the details provided <br>";
 }
     }
 
