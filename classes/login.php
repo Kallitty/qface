@@ -44,7 +44,7 @@ if ($result) {
     $row=$result[0];
     if($password==$row['password']){
 //create session data
-$_SESSION['userid']=$row['userid'];
+$_SESSION['qface_userid']=$row['userid'];
     }else
     {
      $this->error = $this->error ."Wrong password! <br>";
