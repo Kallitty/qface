@@ -78,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
       <div id="signup_button">Sign Up</div>
     </div>
     <div id="login_bar">
+      <form method="post">
       Log in to Qface <br /><br />
       <input
           value='<?php echo $email_address_or_phone_number?>'
@@ -91,6 +92,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
       <br /><br />
       <input type="submit" id="submit" value="Log in" /><br /><br />
       <br /><br />
+      </form>
     </div>
   </body>
 </html>

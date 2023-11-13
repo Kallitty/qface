@@ -69,7 +69,7 @@ $result = $DB->save($query);
 // Check if the query was executed successfully
 if ($result) {
     // Redirect or display a success message
-    header("Location: profile.php");
+    header("Location: login.php");
      
     die;
 } else {
