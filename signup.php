@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
             id="text"
             name="email_address_or_phone_number"
             placeholder="Email address or phone number"
-          /><br />
+          />  <br />
           <input type="password" id="text" name="password" placeholder="Password" />
           <br />
           <input type="password" id="text" name="password2" placeholder="Re-type password" />
