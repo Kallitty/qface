@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     header("Location:profile.php");
     die;
   }
-      $password=$_POST['first_name'];
+      $password=$_POST['password'];
       $email_address_or_phone_number=$_POST['email_address_or_phone_number'];
 
 }
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         placeholder="Email address or phone number"
       /><br />
       <br />
-      <input type="password" id="text" name="Password" placeholder="Password" />
+      <input type="password" id="text" name="password" placeholder="Password" />
       <br /><br />
       <input type="submit" id="submit" value="Log in" /><br /><br />
       <br /><br />
