@@ -13,8 +13,12 @@ if (isset($_SESSION['qface_userid'])){
   $result= $login->check_login($id);
   if ($result){
     //retrieve the data
-    echo "It is fine";
-
+    $user= new User();
+    $user_data = $user->get_data($id);
+    if (!$user_data ){
+      header("Location:login.php");
+      die;
+    }
   }else{
     header("Location: login.php");
     die;
@@ -23,6 +27,7 @@ if (isset($_SESSION['qface_userid'])){
     header("Location: login.php");
     die;
   }
+  print_r($user_data)
 ?>
 
 <!DOCTYPE html>
