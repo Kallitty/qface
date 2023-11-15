@@ -5,6 +5,7 @@ $_SESSION['qface_userid']=="";
 
 include_once("classes/connect.php");
 include_once("classes/login.php");
+include("classes/user.php");
 if (isset($_SESSION['qface_userid'])){
 
   $id = $_SESSION['qface_userid'];
