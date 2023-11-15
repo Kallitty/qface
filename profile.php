@@ -1,6 +1,7 @@
 <?php 
 session_start();
-//print_r($_SESSION);
+
+$_SESSION['qface_userid']=="";
 
 include_once("classes/connect.php");
 include_once("classes/login.php");
@@ -10,12 +11,17 @@ if (isset($_SESSION['qface_userid'])){
   $login = new Login();
   $result= $login->check_login($id);
   if ($result){
+    //retrieve the data
+    echo "It is fine";
 
   }else{
     header("Location: login.php");
     die;
   }
-}
+} else{
+    header("Location: login.php");
+    die;
+  }
 ?>
 
 <!DOCTYPE html>
