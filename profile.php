@@ -4,6 +4,18 @@ session_start();
 
 include_once("classes/connect.php");
 include_once("classes/login.php");
+if (isset($_SESSION['qface_userid'])){
+
+  $id = $_SESSION['qface_userid'];
+  $login = new Login();
+  $result= $login->check_login($id);
+  if ($result){
+
+  }else{
+    header("Location: login.php");
+    die;
+  }
+}
 ?>
 
 <!DOCTYPE html>
