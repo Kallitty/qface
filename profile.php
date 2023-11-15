@@ -27,7 +27,7 @@ if (isset($_SESSION['qface_userid'])){
     header("Location: login.php");
     die;
   }
-  print_r($user_data)
+
 ?>
 
 <!DOCTYPE html>
@@ -128,7 +128,9 @@ color:#d9dfeb;
 <img src="mountain.jpg" style="width: 100%;">
 <img src="selfie.jpg" id="profile_pic">
 <br/>
-Catherine Lawson
+<?php
+echo $user_data['first_name'] .' '. $user_data['surname'];
+?>
 <br/>
 <div id="menu_button">About</div>  
 <div  id="menu_button">Friends </div>
