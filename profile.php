@@ -119,7 +119,11 @@ color:#d9dfeb;
  <div style="width:800px; margin:auto; font: size 40px;">
   Qface &nbsp;
   <input type="text" id="search_box" placeholder="Search for people">
-  <img src="selfie.jpg" style="width: 60px; float:right;">
+  <img src="selfie.jpg" style="width: 60px; float:right;">  <br/>
+  <a href="logout.php">
+    <span style="font: size 11px; float:right; margin: 5px; color:azure; ">Logout</span>
+  </a>
+  
  </div>
 </div>
  <!-- Cover area-->
