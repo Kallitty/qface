@@ -172,11 +172,12 @@ echo $user_data['first_name'] .' '. $user_data['surname'];
 <!-- Posts area-->
 <div style=" min-height: 500px; flex:2.6"; padding: 20px;>
 <div style="border: 1px solid #aaa; padding: 10px; background-color:white;">
-<textarea placeholder="What is on your mind?"></textarea>
+<form method="post">
+<textarea name="post" placeholder="What is on your mind?"></textarea>
 <input id="post_button" type="submit" name="" value="Post">
 <br>
 </div>
-
+</form>
 
 <!-- Posts-->
 <div  id="post_bar">
