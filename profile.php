@@ -27,6 +27,11 @@ if (isset($_SESSION['qface_userid'])){
     header("Location: login.php");
     die;
   }
+  //posting starts here
+  if($_SERVER['REQUEST_METHOD']=="POST"){
+
+    print_r($_POST);
+  }
 
 ?>
 
