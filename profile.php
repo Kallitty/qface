@@ -34,6 +34,16 @@ if (isset($_SESSION['qface_userid'])){
 $post = new Post();
 $id =$_SESSION['qface_userid'];
 $result= $post->create_post($id, $_POST );
+if($result==""){
+  header("Location:profile.php");
+  die;
+
+}else{
+   echo"<div style='text-align:center; font-size: 12px; color:white; background-color:grey;'>";
+   echo "The following errors occured: <br><br>";
+   echo $result;
+   echo"</div>";
+}
 
     // print_r($_POST);
   }
@@ -190,39 +200,13 @@ echo $user_data['first_name'] .' '. $user_data['surname'];
 </form>
 
 <!-- Posts-->
-<div  id="post_bar">
-  <!-- Post 1-->
-  <div id="post">
-    <div>
-      <img src="user1.jpg" style="width:75px; margin-right: 4px; flex:1; "; />
-  </div>
-<div style="flex:5;">
+<?php
+for ($i=0; $i<10; $i++){
+  include('post.php');
 
-<div style="font-weight: bold; color:#405d9b;">
-  Josh Kamrudeen
-</div>
-   A customer is trying to make a transfer of 5m using the app,
-It was set up today (app and soft token), it keeps saying token authentication failed and it’s really urgent he makes the transfer.<br/><br/>
-<a href="">Like  </a> . <a href="">Comment  </a> . <span style="color:#999;">November 1 2023</span>
-</div>
-</div>
+} 
 
-<!-- Post 2-->
-  <div id="post">
-    <div>
-      <img src="user2.jpg" style="width:75px; margin-right: 4px; flex:1; "; />
-  </div>
-<div style="flex:5;">
-
-<div style="font-weight: bold; color:#405d9b;">
-  Bush George
-</div>
-🔑📖 KEY VERSE: "So we, being many, are one body in Christ, and every one members one of another” (ROMANS 12:5).
-
-     We attach much importance to love, and read lots of meaning to it, most of which are unnecessary. The real object of our love should be towards God first and then to the people around us. It is assumed that we already love ourselves. God, therefore, wants us to direct the remaining love in our hearts to our brethren and other people around us.<br/><br/>
-<a href="">Like  </a> . <a href="">Comment  </a> . <span style="color:#999;">November 1 2023</span>
-</div>
-</div>
+?>
 
 
   </div>

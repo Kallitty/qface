@@ -2,27 +2,6 @@
 class Login{ 
     private $error = "";
 
-    // public function evaluate($data){
-    //     foreach ($data as $key => $value) {
-    //         // Check for empty fields
-    //         if (empty($value)) {
-    //             $this->error = $this->error . $key . " Kindly input field</br>";
-    //         }
-
-    //         if ($key == "email_address_or_phone_number") {
-    //             if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
-    //                 $this->error = $this->error . "Invalid email address!</br>";
-    //             }
-    //         } 
-    //     }
-
-    //     if ($this->error == "") {
-    //         // No error
-    //         $this->create_user($data);
-    //     } else {
-    //         return $this->error;
-    //     }
-    // }
 
     public function evaluate($data){
         $email_address_or_phone_number = addslashes($data['email_address_or_phone_number']);
