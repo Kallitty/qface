@@ -6,6 +6,8 @@ $_SESSION['qface_userid']=="";
 include_once("classes/connect.php");
 include_once("classes/login.php");
 include("classes/user.php");
+include("classes/post.php");
+
 if (isset($_SESSION['qface_userid'])){
 
   $id = $_SESSION['qface_userid'];
@@ -29,8 +31,11 @@ if (isset($_SESSION['qface_userid'])){
   }
   //posting starts here
   if($_SERVER['REQUEST_METHOD']=="POST"){
+$post = new Post();
+$id =$_SESSION['qface_userid'];
+$result= $post->create_post($id, $_POST );
 
-    print_r($_POST);
+    // print_r($_POST);
   }
 
 ?>
