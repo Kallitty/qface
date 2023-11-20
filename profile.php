@@ -34,6 +34,7 @@ if (isset($_SESSION['qface_userid'])){
 $post = new Post();
 $id =$_SESSION['qface_userid'];
 $result= $post->create_post($id, $_POST );
+
 if($result==""){
   header("Location:profile.php");
   die;
@@ -45,7 +46,6 @@ if($result==""){
    echo"</div>";
 }
 
-    // print_r($_POST);
   }
 
 ?>

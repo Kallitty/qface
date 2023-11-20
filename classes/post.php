@@ -8,6 +8,7 @@ $postid=$this->create_postid();
 $query="insert into posts (userid, postid, post) values ('$userid', '$postid', '$post')";
 $DB = new Database();
 $DB->save($query);
+
 }else{
 $this->error= "Please type in something. </br>";
 }
