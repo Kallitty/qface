@@ -12,14 +12,16 @@
 <div style="font-weight: bold; color:#405d9b;">
   Josh Kamrudeen
 </div>
-   A customer is trying to make a transfer of 5m using the app,
-It was set up today (app and soft token), it keeps saying token authentication failed and it’s really urgent he makes the transfer.<br/><br/>
+<?php
+echo $ROW['post']
+?>
+   .<br/><br/>
 <a href="">Like  </a> . <a href="">Comment  </a> . <span style="color:#999;">November 1 2023</span>
 </div>
 </div>
 
 <!-- Post 2-->
-  <div id="post">
+  <!-- <div id="post">
     <div>
       <img src="user2.jpg" style="width:75px; margin-right: 4px; flex:1; "; />
   </div>
@@ -33,4 +35,4 @@ It was set up today (app and soft token), it keeps saying token authentication f
      We attach much importance to love, and read lots of meaning to it, most of which are unnecessary. The real object of our love should be towards God first and then to the people around us. It is assumed that we already love ourselves. God, therefore, wants us to direct the remaining love in our hearts to our brethren and other people around us.<br/><br/>
 <a href="">Like  </a> . <a href="">Comment  </a> . <span style="color:#999;">November 1 2023</span>
 </div>
-</div>
+</div> -->

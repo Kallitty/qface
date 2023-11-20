@@ -207,9 +207,11 @@ echo $user_data['first_name'] .' '. $user_data['surname'];
 <!-- Posts-->
 <?php
 if ($posts){
+
   foreach($posts as $ROW){
     $user= new User();
     $ROW_USER= $user->get_user($ROW['userid']);
+    var_dump($ROW_USER); // Check the value of $ROW_USER
  include('post.php');
   }
 }
