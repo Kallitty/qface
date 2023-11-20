@@ -47,11 +47,11 @@ if($result==""){
 }
 
   }
+
   //collecting posts
   $post = new Post();
 $id =$_SESSION['qface_userid'];
 $posts= $post->get_posts($id);
-
 
 ?>
 
@@ -207,17 +207,17 @@ echo $user_data['first_name'] .' '. $user_data['surname'];
 <!-- Posts-->
 <?php
 if ($posts){
-  foreach($posts as $row){
+  foreach($posts as $ROW){
+    $user= new User();
+    $ROW_USER= $user->get_user($ROW['userid']);
  include('post.php');
   }
 }
 
 ?>
 
-
   </div>
 </div> <br/><br/>
-
 
 </div>
 </div>
