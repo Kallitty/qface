@@ -10,7 +10,9 @@
 <div style="flex:5;">
 
 <div style="font-weight: bold; color:#405d9b;">
-  Josh Kamrudeen
+  <?php
+echo $ROW_USER['surname'] . " " . $ROW_USER['first_name'];
+?>
 </div>
 <?php
 echo $ROW['post']
@@ -21,7 +23,7 @@ echo $ROW['post']
 </div>
 
 <!-- Post 2-->
-  <!-- <div id="post">
+  <div id="post">
     <div>
       <img src="user2.jpg" style="width:75px; margin-right: 4px; flex:1; "; />
   </div>
@@ -35,4 +37,4 @@ echo $ROW['post']
      We attach much importance to love, and read lots of meaning to it, most of which are unnecessary. The real object of our love should be towards God first and then to the people around us. It is assumed that we already love ourselves. God, therefore, wants us to direct the remaining love in our hearts to our brethren and other people around us.<br/><br/>
 <a href="">Like  </a> . <a href="">Comment  </a> . <span style="color:#999;">November 1 2023</span>
 </div>
-</div> -->
+</div> 
