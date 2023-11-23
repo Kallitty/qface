@@ -21,6 +21,8 @@ $DB = new Database();
 $result=$DB->read($query);
 if ($result){
  return $result;
+ // $ROW =$result[0];
+ // return $ROW;
 }else{
  return false;
 }
