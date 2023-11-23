@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
   }
       $password=$_POST['password'];
       $email_address_or_phone_number=$_POST['email_address_or_phone_number'];
-
 }
       
 ?>

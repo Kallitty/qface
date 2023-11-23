@@ -5,7 +5,11 @@
   <!-- Post 1-->
   <div id="post">
     <div>
-      <img src="user1.jpg" style="width:75px; margin-right: 4px; flex:1; "; />
+     <?php
+$image="";
+if()
+?>
+      <img src="<?php echo $image ?>" style="width:75px; margin-right: 4px; flex:1;" />
   </div>
 <div style="flex:5;">
 
