@@ -6,8 +6,10 @@
   <div id="post">
     <div>
      <?php
-$image="";
-if()
+$image="images/user_male.jpg";
+if($ROW_USER['gender']=="Female"){
+$image ="images/user_female.jpg";
+}else
 ?>
       <img src="<?php echo $image ?>" style="width:75px; margin-right: 4px; flex:1;" />
   </div>
