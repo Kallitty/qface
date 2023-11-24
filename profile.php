@@ -53,6 +53,10 @@ if($result==""){
 $id =$_SESSION['qface_userid'];
 $posts= $post->get_posts($id);
 
+//collecting friends
+  $user = new User();
+$id =$_SESSION['qface_userid'];
+$friends= $user->get_friends($id);
 ?>
 
 <!DOCTYPE html>
@@ -168,30 +172,24 @@ echo $user_data['first_name'] .' '. $user_data['surname'];
 </div>
 <!-- The 2 columns -->
 <div style="display:flex;">
+
 <!-- Friends area -->
 <div style=" min-height: 500px; flex:1;">
 <div id="friends_bar">
  Friends<br/>
- <div id="friends">
-  <img id="friends_img" src="user1.jpg">
-  <br/>
-  Josh Kamrudeen<br/>
-</div>
+ <?php
+if ($friends){
+foreach($friends as $FRIEND_ROW){
+  include('user.php');
+  }
+}
+
+?>
 <div id="friends">
   <img id="friends_img" src="user4.jpg">
   <br/>
   Kallie Estate<br/>
 </div>
-<div id="friends">
-  <img id="friends_img" src="user3.jpg">
-  <br/>
-  Peters Kangaroo<br/>
-</div><div id="friends">
-  <img id="friends_img" src="user2.jpg">
-  <br/>
-  Bush George<br/>
-</div>
-
 </div>
 </div>
 <!-- Posts area-->
@@ -207,8 +205,7 @@ echo $user_data['first_name'] .' '. $user_data['surname'];
 <!-- Posts-->
 <?php
 if ($posts){
-
-  foreach($posts as $ROW){
+foreach($posts as $ROW){
     $user= new User();
     $ROW_USER= $user->get_user($ROW['userid']);
     // var_dump($ROW_USER); // Check the value of $ROW_USER
