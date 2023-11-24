@@ -37,7 +37,8 @@ public function  get_friends($id)
   }else{
    return false;
   }
- }
+}
+
 }
 
 ?>
