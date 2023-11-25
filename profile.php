@@ -8,28 +8,10 @@ include_once("classes/login.php");
 include("classes/user.php");
 include("classes/post.php");
 
-if (isset($_SESSION['qface_userid'])){
+$login = new Login();
+$login->check_login($_SESSION['qface_userid']);
 
-  $id = $_SESSION['qface_userid'];
-  $login = new Login();
-  $result= $login->check_login($id);
-  if ($result){
-    //retrieve the data
-    $user= new User();
-    $user_data = $user->get_data($id);
-    if (!$user_data ){
-      header("Location:login.php");
-      die;
-    }
-  }else{
-    header("Location: login.php");
-    die;
-  }
-} else{
-    header("Location: login.php");
-    die;
-  }
-  //posting starts here
+//posting starts here
   if($_SERVER['REQUEST_METHOD']=="POST"){
 $post = new Post();
 $id =$_SESSION['qface_userid'];

@@ -11,21 +11,21 @@ class Login{
 
         // Execute your database query here
         $DB = new Database();
-$result = $DB->read($query);
+        $result = $DB->read($query);
 
-// Check if the query was executed successfully
-if ($result) {
-    // Redirect or display a success message
-    $row=$result[0];
-    if($password==$row['password']){
-//create session data
-$_SESSION['qface_userid']=$row['userid'];
-    }else
-    {
-     $this->error = $this->error ."Wrong password! <br>";
-    }
-     
-} else {
+        // Check if the query was executed successfully
+        if ($result) {
+            // Redirect or display a success message
+            $row=$result[0];
+            if($password==$row['password']){
+        //create session data
+        $_SESSION['qface_userid']=$row['userid'];
+            }else
+            {
+            $this->error = $this->error ."Wrong password! <br>";
+            }
+            
+        } else {
     // Display an error message
     $this->error = $this->error."User not found for the details provided <br>";
 }
@@ -42,18 +42,25 @@ $_SESSION['qface_userid']=$row['userid'];
     }
 
     public function check_login($id){
-      $query = "select userid from users where userid ='$id' limit 1";
+     if (is_numeric($id)){
+      $query = "select * from users where userid ='$id' limit 1";
+
+        $DB = new Database();
+        $result = $DB->read($query);
+         if ($result) {
+            $user_data=$result[0];
+             return $user_data;
+        }else{
+            header("Location: login.php");
+            die;
+        }
+        
 
        
-        $DB = new Database();
-$result = $DB->read($query);
- 
-
-
-if ($result) {
- return true;
-}
-return false;
-    }
-}
+        } else{
+            header("Location: login.php");
+            die;
+        }
+            }
+        }
 ?>
