@@ -9,7 +9,7 @@ include("classes/user.php");
 include("classes/post.php");
 
 $login = new Login();
-$login->check_login($_SESSION['qface_userid']);
+$user_data = $login->check_login($_SESSION['qface_userid']);
 
 //posting starts here
   if($_SERVER['REQUEST_METHOD']=="POST"){
@@ -147,6 +147,7 @@ color:#d9dfeb;
 echo $user_data['first_name'] .' '. $user_data['surname'];
 ?>
 <br/>
+<a href="index.php" >  <div id="menu_button">Timeline</div>  </a>
 <div id="menu_button">About</div>  
 <div  id="menu_button">Friends </div>
 <div  id="menu_button">Photos </div>
