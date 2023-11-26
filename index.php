@@ -113,10 +113,10 @@ color:#d9dfeb;
 <div style=" min-height: 500px; flex:1;">
 <div id="friends_bar">
 <img src="selfie.jpg" id="profile_pic"><br/>
-Catherine Lawson
+ <a href="index.php" style="text-decoration: none; color:#405d9b;"> Catherine Lawson &nbsp; </a> 
 </div>
 </div>
-<!-- Posts area-->
+<!-- Posts area-->       
 
 <div style=" min-height: 500px; flex:2.6"; padding: 20px;>
 <div style="border: 1px solid #aaa; padding: 10px; background-color:white;">
