@@ -7,6 +7,8 @@ include_once("classes/connect.php");
 include_once("classes/login.php");
 include("classes/user.php");
 include("classes/post.php");
+$login = new Login();
+$user_data=$login->check_login($_SESSION['qface_userid']);
 
 ?>
 
@@ -113,7 +115,7 @@ color:#d9dfeb;
 <div style=" min-height: 500px; flex:1;">
 <div id="friends_bar">
 <img src="selfie.jpg" id="profile_pic"><br/>
- <a href="index.php" style="text-decoration: none; color:#405d9b;"> Catherine Lawson &nbsp; </a> 
+ <a href="profile.php" style="text-decoration: none; color:#405d9b;"> <?php echo $user_data['first_name'] . " " . $user_data['surname'] ?> &nbsp; </a> 
 </div>
 </div>
 <!-- Posts area-->       
