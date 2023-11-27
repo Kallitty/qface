@@ -97,13 +97,9 @@ color:#d9dfeb;
  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  background-color: #d0d8e4;">
 
  <!-- Top bar-->
-<div id="blue_bar">
- <div style="width:800px; margin:auto; font: size 40px;">
-  Qface &nbsp;
-  <input type="text" id="search_box" placeholder="Search for people">
-  <img src="selfie.jpg" style="width: 60px; float:right;">
- </div>
-</div>
+<?php 
+ include("header.php");
+ ?>
  <!-- Cover area-->
  <div  style="width:800px; margin:auto;  min-height:  400px;">
 <div style="background-color: white; text-align: center; color:#405d9b;">

@@ -126,7 +126,7 @@ color:#d9dfeb;
  <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  background-color: #d0d8e4;">
 
  <?php 
-//  include("header.php");
+ include("header.php");
  ?>
  <!-- Cover area-->
  <div  style="width:800px; margin:auto;  min-height:  400px;">
