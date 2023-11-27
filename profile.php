@@ -132,8 +132,10 @@ color:#d9dfeb;
  <div  style="width:800px; margin:auto;  min-height:  400px;">
 <div style="background-color: white; text-align: center; color:#405d9b;">
 <img src="mountain.jpg" style="width: 100%;">
-<img src="selfie.jpg" id="profile_pic">
+<span style="font-size: 11px;"><img src="selfie.jpg" id="profile_pic">
 <br/>
+<a href="change_profile_image.php" style="text-decoration: none;"> Change Image <br/> </a>
+</span>
 <?php
 echo $user_data['first_name'] .' '. $user_data['surname'];
 ?>
