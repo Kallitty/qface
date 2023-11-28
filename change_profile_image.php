@@ -35,13 +35,14 @@ color:#d9dfeb;
       background-repeat: no-repeat;
       background-position: right;
     }
-   
-    #menu_button{
-     width: 100px;
-     display: inline-block;
-     margin: 2px;
-    }
-   
+    
+     textarea{
+      width:100%;
+      border:none;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 14px;
+      height: 60px;
+     }
      #post_button{
       float: right;
       background-color: #405d9b;
@@ -75,23 +76,16 @@ color:#d9dfeb;
 <div style="background-color: white; text-align: center; color:#405d9b;">
 <br/><br/>
 </div>
-<!-- The 2 columns -->
-<div style="display:flex;">
-<!-- Friends area -->
-<div style=" min-height: 500px; flex:1;">
-<div id="friends_bar">
-<img src="selfie.jpg" id="profile_pic"><br/>
- <a href="profile.php" style="text-decoration: none; color:#405d9b;"> <?php echo $user_data['first_name'] . " " . $user_data['surname'] ?> &nbsp; </a> 
-</div>
-</div>
+<!-- Posts area-->       
 
+<div style=" min-height: 500px; flex:2.6"; padding: 20px;>
+<div style="border: 1px solid #aaa; padding: 10px; background-color:white;">
 
-
-
+<textarea placeholder="What is on your mind?"></textarea>
+<input id="post_button" type="submit" name="" value="Post">
+<br>
 </div>
 
-
-  </div>
 </div> <br/><br/>
 
 
