@@ -74,20 +74,20 @@ color:#d9dfeb;
  <!-- Cover area-->
  <div  style="width:800px; margin:auto;  min-height:  400px;">
 <div style="background-color: white; text-align: center; color:#405d9b;">
-<br/><br/>
+<br/>
 </div>
 <!-- Posts area-->       
-
-<div style=" min-height: 500px; flex:2.6"; padding: 20px;>
+<form method="post" enctype="multipart/form-data">
+<div style=" min-height: 500px; flex:2.6"; padding: 10px;>
 <div style="border: 1px solid #aaa; padding: 10px; background-color:white;">
 
-<textarea placeholder="What is on your mind?"></textarea>
+<input id="" type="file" name="file" value="Post">
 <input id="post_button" type="submit" name="" value="Post">
 <br>
 </div>
 
 </div> <br/><br/>
-
+</form>
 
 </div>
 </div>
