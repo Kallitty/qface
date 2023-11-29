@@ -10,6 +10,12 @@ include("classes/post.php");
 $login = new Login();
 $user_data=$login->check_login($_SESSION['qface_userid']);
 
+
+if($_SERVER['REQUEST_METHOD']=="POST"){
+print_r($_POST);
+print_r($_FILES);
+
+}
 ?>
 
 <!DOCTYPE html>
