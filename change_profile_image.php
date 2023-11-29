@@ -12,9 +12,12 @@ $user_data=$login->check_login($_SESSION['qface_userid']);
 
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
+
 print_r($_POST);
 print_r($_FILES);
-
+if (isset($_FILES['file'] ['tmp_name']))
+$filename= $_FILES['file'] ['tmp_name'];
+move_uploaded_file($_FILES['file'] ['tmp_name'], "uploads/" . $filename);
 }
 ?>
 
