@@ -13,15 +13,14 @@ $user_data=$login->check_login($_SESSION['qface_userid']);
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
 
-print_r($_POST);
-print_r($_FILES);
+$error ="";
 if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
 $filename= $_FILES['file'] ['name'];
 move_uploaded_file($_FILES['file'] ['tmp_name'], "uploads/" . $filename);
 }else{
   echo"<div style='text-align:center; font-size: 12px; color:white; background-color:grey;'>";
    echo "The following errors occured: <br><br>";
-   echo $result;
+   echo "please add a valid image";
    echo"</div>";
 }
 
@@ -68,7 +67,7 @@ color:#d9dfeb;
       border-radius: 4px;
       padding: 2px;
       font-size: 14px;
-      width:40px ;
+      width:50px ;
      }
      #post_bar{
      margin-top: 20px;
@@ -98,11 +97,10 @@ color:#d9dfeb;
 <div style=" min-height: 500px; flex:2.6"; padding: 10px;>
 <div style="border: 1px solid #aaa; padding: 10px; background-color:white;">
 
-<input id="" type="file" name="file" value="Post">
-<input id="post_button" type="submit" name="" value="Post">
+<input id="" type="file" name="file" value="Change">
+<input id="post_button" type="submit" name="" value="Change">
 <br>
 </div>
-
 </div> <br/><br/>
 </form>
 
