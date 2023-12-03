@@ -17,14 +17,16 @@ $error ="";
 if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
 $filename= $_FILES['file'] ['name'];
 move_uploaded_file($_FILES['file'] ['tmp_name'], "uploads/" . $filename);
+if(file_exists($filename)){
+  $DB =new Database();
+  $DB->save($query);
+}  
 }else{
   echo"<div style='text-align:center; font-size: 12px; color:white; background-color:grey;'>";
    echo "The following errors occured: <br><br>";
    echo "please add a valid image";
    echo"</div>";
 }
-
-
 }
 ?>
 
