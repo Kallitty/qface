@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-$_SESSION['qface_userid']=="";
+$_SESSION['qface_userid']== "";
 
 include_once("classes/connect.php");
 include_once("classes/login.php");
