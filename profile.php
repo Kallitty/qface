@@ -88,11 +88,11 @@ color:#d9dfeb;
      color:#aaa
      }
       #friends{
-  clear:both;
-     padding: 2px;
-     font-size: 12px;
-     font-weight:bold;
-     color:#405d9b;
+      clear:both;
+      padding: 2px;
+      font-size: 12px;
+      font-weight:bold;
+      color:#405d9b;
      }
      textarea{
       width:100%;
