@@ -15,8 +15,17 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
 // $error ="";
 if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
-$filename= $_FILES['file'] ['name'];
-move_uploaded_file($_FILES['file'] ['tmp_name'], "uploads/" . $filename);
+  if($_FILES['file'] ['type'] =="image/jpeg"){
+
+  }else
+  echo"<div style='text-align:center; font-size: 12px; color:white; background-color:grey;'>";
+   echo "The following errors occured: <br><br>";
+   echo "please add a jpeg image type";
+   echo"</div>";
+}
+
+$filename= "uploads/" . $_FILES['file'] ['name'];
+move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
 if(file_exists($filename)){
   $userid= $user_data['userid'];
   $query="update users set profile_image='$filename' where userid = '$userid' limit 1";
