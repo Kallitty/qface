@@ -16,6 +16,26 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 // $error ="";
 if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
   if($_FILES['file'] ['type'] =="image/jpeg"){
+      $allowed_size= (1024* 1024*3) ;
+    if($_FILES['file'] ['size'] < $allowed_size){
+        //everything is fine
+        $filename= "uploads/" . $_FILES['file'] ['name'];
+        move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
+        if(file_exists($filename)){
+          $userid= $user_data['userid'];
+          $query="update users set profile_image='$filename' where userid = '$userid' limit 1";
+          $DB =new Database();
+          $DB->save($query);
+
+          header("Location:profile.php");
+          die;
+         
+    }else{
+  echo"<div style='text-align:center; font-size: 12px; color:white; background-color:grey;'>";
+   echo "The following errors occured: <br><br>";
+   echo "Only images of 3mb or lower is allowed!";
+   echo"</div>";
+}
 
   }else
   echo"<div style='text-align:center; font-size: 12px; color:white; background-color:grey;'>";
