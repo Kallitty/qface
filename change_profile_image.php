@@ -24,7 +24,7 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
         $filename= "uploads/" . $_FILES['file'] ['name'];
         move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
         $image = new $Image;
-        $image->crop_image($filename, cropped_image, 1000, 1000);
+        $image->crop_image($filename, $filename, 850, 850);
 
         if(file_exists($filename)){
           $userid= $user_data['userid'];
