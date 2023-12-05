@@ -7,6 +7,8 @@ include_once("classes/connect.php");
 include_once("classes/login.php");
 include("classes/user.php");
 include("classes/post.php");
+include("classes/image.php");
+
 $login = new Login();
 $user_data=$login->check_login($_SESSION['qface_userid']);
 
@@ -21,6 +23,9 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
         //everything is fine
         $filename= "uploads/" . $_FILES['file'] ['name'];
         move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
+        $image = new $Image;
+        $image->crop_image($filename, cropped_image, 1000, 1000);
+
         if(file_exists($filename)){
           $userid= $user_data['userid'];
           $query="update users set profile_image='$filename' where userid = '$userid' limit 1";
