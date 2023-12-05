@@ -25,7 +25,8 @@ public function crop_image($original_file_name, $cropped_file_name, $max_width, 
   }
  }
 $new_image= imagecreatetruecolor($new_width, $new_height);
- imagecopyresampled($new_image,  $original_image, $dst_x, $dst_y, $src_x,  $src_y, $dst_width, $dst_height,  $src_width, $src_height);
+ imagecopyresampled($new_image,  $original_image, 0, 0, 0,  0, $new_width, $new_height,  $original_width, $original_height);
+ imagejpeg($cropped_file_name, 90);
 }
 }
 

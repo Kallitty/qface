@@ -23,7 +23,7 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
         //everything is fine
         $filename= "uploads/" . $_FILES['file'] ['name'];
         move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
-        $image = new $Image;
+        $image = new Image;
         $image->crop_image($filename, $filename, 850, 850);
 
         if(file_exists($filename)){
