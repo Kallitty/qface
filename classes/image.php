@@ -16,11 +16,16 @@ public function crop_image($original_file_name, $cropped_file_name, $max_width, 
  
 
   }else{
-   
+    //make height equal to max height
+   $ratio= $max_height/$original_height;
+
+   $new_height= $max_height;
+   $new_width= $original_width* $ratio;
+
   }
  }
-
- imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x,  $src_y, $dst_width, $dst_height,  $src_width, $src_height);
+$new_image= imagecreatetruecolor($new_width, $new_height);
+ imagecopyresampled($new_image,  $original_image, $dst_x, $dst_y, $src_x,  $src_y, $dst_width, $dst_height,  $src_width, $src_height);
 }
 }
 
