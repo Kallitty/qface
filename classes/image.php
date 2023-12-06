@@ -38,7 +38,10 @@ $new_image= imagecreatetruecolor($new_width, $new_height);
   $y=0;
  }
  $new_cropped_image=imagecreatetruecolor($max_width, $max_height);
- imagecopyresampled($new_cropped_image, $new_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $dst_width, int $dst_height, int $src_width, int $src_height))
+ imagecopyresampled($new_cropped_image, $new_image, 0, 0, $x, $y, $max_width, $max_height, $max_width  $max_height);
+imagedestroy($new_image);
+ imagejpeg($new_image, $cropped_file_name, 90);
+ imagedestroy($new_cropped_image);
 }
 }
 
