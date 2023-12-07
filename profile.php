@@ -143,7 +143,8 @@ if (file_exists($user_data['profile_image'])){
 <img src="<?php echo $image ?>" id="profile_pic">
 <br/>
 
-<a href="change_profile_image.php" style="text-decoration: none;"> Change Image <br/> </a>
+<a href="change_profile_image.php" style="text-decoration: none;"> Change Profile Image <br/> </a>
+<a href="change_cover_image.php" style="text-decoration: none;"> Change Cover Image <br/> </a>
 </span>
 <?php
 echo $user_data['first_name'] .' '. $user_data['surname'];
