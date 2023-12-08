@@ -28,6 +28,14 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
 
         if(file_exists($filename)){
           $userid= $user_data['userid'];
+          $change="profile";
+
+          if(isset($_GET['change'])){
+            $change=$_GET['change'];
+          }
+          if ($change=='profile'){
+            
+          }
           $query="update users set profile_image='$filename' where userid = '$userid' limit 1";
           $DB =new Database();
           $DB->save($query);
