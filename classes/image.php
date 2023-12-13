@@ -42,6 +42,9 @@ $new_image= imagecreatetruecolor($new_width, $new_height);
 imagedestroy($new_image);
  imagejpeg($new_image, $cropped_file_name, 90);
  imagedestroy($new_cropped_image);
+ if($new_height>$new_width){
+  
+ }
 }
 }
 ?>
