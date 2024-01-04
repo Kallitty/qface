@@ -26,8 +26,10 @@ public function crop_image($original_file_name, $cropped_file_name, $max_width, 
  }
 $new_image= imagecreatetruecolor($new_width, $new_height);
  imagecopyresampled($new_image,  $original_image, 0, 0, 0,  0, $new_width, $new_height,  $original_width, $original_height);
- imagejpeg($cropped_file_name, 90);
+ //save the cropped image to a file
+ imagejpeg($new_image, $cropped_file_name, 90);
  imagedestroy($original_image);
+ 
  if($new_height>$new_width){
   $diff =($new_height-$new_width);
   $y=round($diff/2);
