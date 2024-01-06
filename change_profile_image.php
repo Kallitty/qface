@@ -12,6 +12,9 @@ include("classes/image.php");
 $login = new Login();
 $user_data=$login->check_login($_SESSION['qface_userid']);
 
+echo "<pre>";
+print_r($_GET);
+echo "</pre>";
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
 
