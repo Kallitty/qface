@@ -12,10 +12,6 @@ include("classes/image.php");
 $login = new Login();
 $user_data=$login->check_login($_SESSION['qface_userid']);
 
-echo "<pre>";
-print_r($_GET);
-echo "</pre>";
-
 if($_SERVER['REQUEST_METHOD']=="POST"){
 
 // $error ="";
@@ -26,20 +22,33 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
         //everything is fine
         $filename= "uploads/" . $_FILES['file'] ['name'];
         move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
-        $image = new Image;
-        $image->crop_image($filename, $filename, 850, 850);
 
-        if(file_exists($filename)){
-          $userid= $user_data['userid'];
-          $change="profile";
-          //check for mode
+        $change="profile";
+          
+          //check for mode of accepting images
           if(isset($_GET['change'])){
             $change=$_GET['change'];
           }
+        $image = new Image;
+
+          if ($change=="cover"){
+            $image->crop_image($filename, $filename, 1366, 488);
+          }else{
+              $image->crop_image($filename, $filename, 850, 850);
+          }
+        
+        
+        if(file_exists($filename)){
+          $userid= $user_data['userid'];
+          
+
+
+
           if ($change=='cover'){
             $query="update users set cover_image='$filename' where userid = '$userid' limit 1";
           }else{
-  $query="update users set profile_image='$filename' where userid = '$userid' limit 1";
+            
+            $query="update users set profile_image='$filename' where userid = '$userid' limit 1";
           }
           
           $DB =new Database();
