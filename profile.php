@@ -132,7 +132,7 @@ color:#d9dfeb;
  <div  style="width:800px; margin:auto;  min-height:  400px;">
 <div style="background-color: white; text-align: center; color:#405d9b;">
 <?php
-$image ="";
+$image ="images/cover_image.jpg";
 if (file_exists($user_data['cover_image'])){
   $image=$user_data['cover_image'];
 } 
@@ -141,7 +141,11 @@ if (file_exists($user_data['cover_image'])){
 <img src="<?php echo $image ?>" style="width: 100%;">
 <span style="font-size: 11px;">
 <?php
-$image ="";
+$image ="images/user_male.jpg";
+if($user_data['gender']== "Female")
+{
+  $image = "images/user_female.jpg";
+}
 if (file_exists($user_data['profile_image'])){
   $image=$user_data['profile_image'];
 } 
