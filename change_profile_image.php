@@ -28,6 +28,7 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
         {
           mkdir($folder, 0777, true);
         }
+          $image = new Image;
         $filename= "uploads/" . $_FILES['file'] ['name'];
         move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
 
@@ -37,7 +38,7 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
           if(isset($_GET['change'])){
             $change=$_GET['change'];
           }
-        $image = new Image;
+      
 
           if ($change=="cover"){
             $image->crop_image($filename, $filename, 1366, 488);
