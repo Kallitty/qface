@@ -47,7 +47,7 @@ $adjustment = ($new_width/ $max_width);
 $new_width=$new_width * $adjustment;
 $new_height=$new_height * $adjustment;
   }
-}
+
 
 $new_image= imagecreatetruecolor($new_width, $new_height);
  imagecopyresampled($new_image,  $original_image, 0, 0, 0,  0, $new_width, $new_height,  $original_width, $original_height);
@@ -65,7 +65,10 @@ if ($max_height!= $max_height)
   $y=round($diff/2);
   $x=0;
  }else{
-  $diff =($new_width-$new_height);
+  $diff =($new_width-$max_height);
+  if($diff<0){
+    $diff=$diff*-1;
+  }
   $x=round($diff/2);
   $y=0;
  }
