@@ -21,6 +21,13 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
       $allowed_size= (1024* 1024*3) ;
     if($_FILES['file'] ['size'] < $allowed_size){
         //everything is fine
+        $folder="uploads/" . $user_dare['userid'] ."/";
+
+        //create folder
+        if(!file_exists($folder))
+        {
+          mkdir($folder, 0777, true);
+        }
         $filename= "uploads/" . $_FILES['file'] ['name'];
         move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
 
