@@ -29,7 +29,7 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
           mkdir($folder, 0777, true);
         }
           $image = new Image;
-        $filename= "uploads/" . $_FILES['file'] ['name'];
+        $filename= $folder . $image->generate_filename(7);
         move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
 
         $change="profile";
