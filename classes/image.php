@@ -24,9 +24,8 @@ public function crop_image($original_file_name, $cropped_file_name, $max_width, 
 
   }
  }
- //adjust incase max width and heifht are different
-if ($max_width !=$max_height)
-{
+ //adjust incase max width and height are different
+
   if ($max_height> $max_width)
   {
 if ($max_height > $new_height){
@@ -56,7 +55,24 @@ $new_image= imagecreatetruecolor($new_width, $new_height);
  imagejpeg($new_image, $cropped_file_name, 90);
  imagedestroy($original_image);
 
- if($new_height>$new_width){
+if ($max_height!= $max_height)
+{
+  if($max_width>$max_height){
+  $diff =($new_height-$max_height);
+  if($diff<0){
+    $diff=$diff*-1;
+  }
+  $y=round($diff/2);
+  $x=0;
+ }else{
+  $diff =($new_width-$new_height);
+  $x=round($diff/2);
+  $y=0;
+ }
+}else{
+
+
+if($new_height>$new_width){
   $diff =($new_height-$new_width);
   $y=round($diff/2);
   $x=0;
@@ -65,6 +81,8 @@ $new_image= imagecreatetruecolor($new_width, $new_height);
   $x=round($diff/2);
   $y=0;
  }
+}
+ 
  $new_cropped_image=imagecreatetruecolor($max_width, $max_height);
  imagecopyresampled($new_cropped_image, $new_image, 0, 0, $x, $y, $max_width, $max_height, $max_width, $max_height);
 imagedestroy($new_image);
