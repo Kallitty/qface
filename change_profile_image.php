@@ -21,7 +21,7 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
       $allowed_size= (1024* 1024*3) ;
     if($_FILES['file'] ['size'] < $allowed_size){
         //everything is fine
-        $folder="uploads/" . $user_dare['userid'] ."/";
+        $folder="uploads/" . $user_data['userid'] ."/";
 
         //create folder
         if(!file_exists($folder))
@@ -79,10 +79,12 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
    echo "please add a jpeg image type";
    echo"</div>";
 }
+//added to check for error
+if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
 
-$filename= "uploads/" . $_FILES['file'] ['name'];
-move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
-if(file_exists($filename)){
+    $filename = "uploads/" . $_FILES['file']['name'];
+    move_uploaded_file($_FILES['file']['tmp_name'], $filename);
+    if (file_exists($filename)) {
   $userid= $user_data['userid'];
   $query="update users set profile_image='$filename' where userid = '$userid' limit 1";
   $DB =new Database();
@@ -96,6 +98,7 @@ if(file_exists($filename)){
    echo "The following errors occured: <br><br>";
    echo "please add a valid image";
    echo"</div>";
+}
 }
 }
 ?>
