@@ -29,7 +29,7 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
           mkdir($folder, 0777, true);
         }
           $image = new Image;
-        $filename= $folder . $image->generate_filename(15);
+        $filename= $folder . $image->generate_filename(15) . ".jpg";
         move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
 
         $change="profile";
@@ -41,18 +41,21 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
       
 
           if ($change=="cover"){
+            if(file_exists($user_data['cover_image'])){
+             unlink ($user_data['cover_image']); 
+            }
+
             $image->crop_image($filename, $filename, 1366, 488);
           }else{
+            if(file_exists($user_data['profile_image'])){
+             unlink ($user_data['profile_image']); 
+            }
               $image->crop_image($filename, $filename, 850, 850);
           }
-        
         
         if(file_exists($filename)){
           $userid= $user_data['userid'];
           
-
-
-
           if ($change=='cover'){
             $query="update users set cover_image='$filename' where userid = '$userid' limit 1";
           }else{
