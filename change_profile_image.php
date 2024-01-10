@@ -59,9 +59,12 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
           if ($change=='cover'){
             $query="update users set cover_image='$filename' where userid = '$userid' limit 1";
           }else{
-            
+            if ($change=='profile'){
             $query="update users set profile_image='$filename' where userid = '$userid' limit 1";
+          }else{
+
           }
+        }
           
           $DB =new Database();
           $DB->save($query);
