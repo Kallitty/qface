@@ -181,18 +181,18 @@ color:#d9dfeb;
 <input id="" type="file" name="file" value="Change">
 <input id="post_button" type="submit" name="submit" value="Change">
 <br>
+<div style="text-align: center;"> 
 <?php
 
-$change="profile";
-          
           //check for mode of accepting images
           if(isset($_GET['change']) && $_GET['change']=="cover"){
             $change="cover";
+           echo "<img src= '$user_data[cover_image]' style='max-width:500px;'>";
+          }else{
+echo "<img src= '$user_data[profile_image]' style='max-width:500px;'>";
           }
-echo "<img src='i'>"
-
 ?>
-
+</div>
 </div>
 </div> <br/><br/>
 </form>
