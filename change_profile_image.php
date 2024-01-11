@@ -181,6 +181,18 @@ color:#d9dfeb;
 <input id="" type="file" name="file" value="Change">
 <input id="post_button" type="submit" name="submit" value="Change">
 <br>
+<?php
+
+$change="profile";
+          
+          //check for mode of accepting images
+          if(isset($_GET['change']) && $_GET['change']=="cover"){
+            $change="cover";
+          }
+echo "<img src='i'>"
+
+?>
+
 </div>
 </div> <br/><br/>
 </form>
