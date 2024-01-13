@@ -105,8 +105,8 @@ imagedestroy($new_image);
 
 }
 
-
-public function resize_image($original_file_name, $cropped_file_name, $max_width, $max_height){
+//resize the image here
+public function resize_image($original_file_name, $resized_file_name, $max_width, $max_height){
 
  if(file_exists($original_file_name)){
   $original_image= imagecreatefromjpeg($original_file_name); 
@@ -160,7 +160,7 @@ $new_image= imagecreatetruecolor($new_width, $new_height);
  imagejpeg($new_image, $cropped_file_name, 90);
  imagedestroy($original_image);
 
- imagejpeg($new_image, $cropped_file_name, 90);
+ imagejpeg($new_image, $resized_file_name, 90);
  imagedestroy($new_image);
 
 }
