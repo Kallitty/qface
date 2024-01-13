@@ -45,12 +45,12 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
              unlink ($user_data['cover_image']); 
             }
 
-            $image->crop_image($filename, $filename, 1366, 488);
+            $image->resize_image($filename, $filename, 1500, 1500);
           }else{
             if(file_exists($user_data['profile_image'])){
              unlink ($user_data['profile_image']); 
             }
-              $image->crop_image($filename, $filename, 850, 850);
+              $image->resize_image($filename, $filename, 1500, 1500);
           }
         
         if(file_exists($filename)){
