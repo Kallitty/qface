@@ -28,10 +28,12 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
         {
           mkdir($folder, 0777, true);
         }
+  
+
           $image = new Image;
         $filename= $folder . $image->generate_filename(15) . ".jpg";
         move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
-
+        
         $change="profile";
           
           //check for mode of accepting images
@@ -89,6 +91,7 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
 if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
 
     $filename = "uploads/" . $_FILES['file']['name'];
+  
     move_uploaded_file($_FILES['file']['tmp_name'], $filename);
     if (file_exists($filename)) {
   $userid= $user_data['userid'];
