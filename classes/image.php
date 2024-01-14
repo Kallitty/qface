@@ -163,10 +163,15 @@ $new_image= imagecreatetruecolor($new_width, $new_height);
  imagejpeg($new_image, $resized_file_name, 90);
  imagedestroy($new_image);
 }
+
+//create thumbnail for cover image
 public function get_thumb_cover($filename)
 {
   $thumbnail=$filename . "_cover_thumb.jpg";
-  
+  if(file_exists($thumbnail))
+  {
+    return $thumbnail;
+  }
   $this->crop_image($filename, $thumbnail,
 1366, 488 );
 if (file_exists($thumbnail))
@@ -177,5 +182,44 @@ return $thumbnail;
   return $filename;
 }
 }
+
+//create thumbnail for cover image
+public function get_thumb_profile($filename)
+{
+  $thumbnail=$filename . "_ptofile_thumb.jpg";
+  if(file_exists($thumbnail))
+  {
+    return $thumbnail;
+  }
+  $this->crop_image($filename, $thumbnail,
+1366, 488 );
+if (file_exists($thumbnail))
+{
+return $thumbnail;
+}else
+{
+  return $filename;
+}
+}
+
+//create thumbnail for post image
+public function get_post_cover($filename)
+{
+  $thumbnail=$filename . "_post_thumb.jpg";
+  if(file_exists($thumbnail))
+  {
+    return $thumbnail;
+  }
+  $this->crop_image($filename, $thumbnail,
+600, 600);
+if (file_exists($thumbnail))
+{
+return $thumbnail;
+}else
+{
+  return $filename;
+}
+}
+
 }
 ?>
