@@ -32,6 +32,10 @@ if (isset($_FILES['file'] ['name'])  && $_FILES['file'] ['name']!=""){
 
           $image = new Image;
         $filename= $folder . $image->generate_filename(15) . ".jpg";
+        
+        // Append the file extension based on the uploaded file type
+                // $filename .= ($_FILES['file']['type'] == "image/jpeg") ? ".jpg" : ".png";
+                
         move_uploaded_file($_FILES['file'] ['tmp_name'], $filename);
         
         $change="profile";

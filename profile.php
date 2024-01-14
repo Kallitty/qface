@@ -7,6 +7,7 @@ include_once("classes/connect.php");
 include_once("classes/login.php");
 include("classes/user.php");
 include("classes/post.php");
+include("classes/image.php");
 
 $login = new Login();
 $user_data = $login->check_login($_SESSION['qface_userid']);
@@ -39,6 +40,8 @@ $posts= $post->get_posts($id);
   $user = new User();
 $id =$_SESSION['qface_userid'];
 $friends= $user->get_friends($id);
+
+$image_class = new Image();
 ?>
 
 <!DOCTYPE html>
@@ -131,10 +134,12 @@ color:#d9dfeb;
  <!-- Cover area-->
  <div  style="width:800px; margin:auto;  min-height:  400px;">
 <div style="background-color: white; text-align: center; color:#405d9b;">
+
 <?php
 $image ="images/cover_image.jpg";
-if (file_exists($user_data['cover_image'])){
-  $image=$user_data['cover_image'];
+if (file_exists($user_data['cover_image']))
+{
+  $image=$image_class->get_thumb_cover($user_data['cover_image']);
 } 
 ?>
 
@@ -154,7 +159,7 @@ if (file_exists($user_data['profile_image'])){
 <img src="<?php echo $image ?>" id="profile_pic">
 <br/>
 
-<a href="change_profile_image.php?change=profile" style="text-decoration: none;"> Change Profile Image <br/> </a>|
+<a href="change_profile_image.php?change=profile" style="text-decoration: none;"> Change Profile Image </a>|
 <a href="change_profile_image.php?change=cover" style="text-decoration: none;"> Change Cover Image <br/> </a>
 </span>`
 <?php
