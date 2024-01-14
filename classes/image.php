@@ -162,7 +162,19 @@ $new_image= imagecreatetruecolor($new_width, $new_height);
 
  imagejpeg($new_image, $resized_file_name, 90);
  imagedestroy($new_image);
-
+}
+public function get_thumb_cover($filename)
+{
+  $thumbnail=$filename . "_cover_thumb.jpg";
+  $this->crop_image($filename, $thumbnail,
+1366, 488 );
+if (file_exists($thumbnail))
+{
+return $thumbnail;
+}else
+{
+  return $filename;
+}
 }
 }
 ?>
