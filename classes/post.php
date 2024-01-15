@@ -2,8 +2,8 @@
 class Post{
  private $error="";
 
-public function create_post($userid, $data){
-if (!empty($data['post'])){
+public function create_post($userid, $data, $files){
+if (!empty($data['post']) || !empty($files['file'] ['name'] )){
 $post =addslashes($data['post']);
 $postid=$this->create_postid();
 $query="insert into posts (userid, postid, post) values ('$userid', '$postid', '$post')";

@@ -16,7 +16,7 @@ $user_data = $login->check_login($_SESSION['qface_userid']);
   if($_SERVER['REQUEST_METHOD']=="POST"){
 $post = new Post();
 $id =$_SESSION['qface_userid'];
-$result= $post->create_post($id, $_POST );
+$result= $post->create_post($id, $_POST, $_FILES );
 
 if($result==""){
   header("Location:profile.php");
