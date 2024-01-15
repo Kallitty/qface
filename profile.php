@@ -152,7 +152,7 @@ if($user_data['gender']== "Female")
   $image = "images/user_female.jpg";
 }
 if (file_exists($user_data['profile_image'])){
-  $image=$user_data['profile_image'];
+  $image=$image_class->get_thumb_profile($user_data['profile_image']);
 } 
 ?>
 
@@ -197,8 +197,9 @@ foreach($friends as $FRIEND_ROW){
 <!-- Posts area-->
 <div style=" min-height: 500px; flex:2.6"; padding: 20px;>
 <div style="border: 1px solid #aaa; padding: 10px; background-color:white;">
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 <textarea name="post" placeholder="What is on your mind?"></textarea>
+<input type="file" name="file">
 <input id="post_button" type="submit" name="" value="Post">
 <br>
 </div>
