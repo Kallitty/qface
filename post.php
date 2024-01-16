@@ -23,10 +23,21 @@ echo $ROW_USER['surname'] . " " . $ROW_USER['first_name'];
 <?php
 echo $ROW['post']
 ?>
-   .<br/><br/>
-<a href="">Like  </a> . <a href="">Comment  </a> . <span style="color:#999;"><?php
+   <br/><br/>
+   <?php
+   if(file_exists($ROW['image']))
+   {
+    $post_image=$ROW['post'];
+echo "<img src= '$ROW[post]' style='width:100%;'/>
+   }
+
+?>
+   <br/><br/>
+<a href="">Like  </a> . <a href="">Comment  </a> . <span style="color:#999;"> 
+<?php
 echo $ROW['date']
-?></span>
+?>
+</span>
 </div>
 </div>
 
