@@ -27,8 +27,8 @@ echo $ROW['post']
    <?php
    if(file_exists($ROW['image']))
    {
-    $post_image=$ROW['post'];
-echo "<img src= '$ROW[post]' style='width:100%;'/>
+    $post_image=$image_class->get_thumb_post($ROW['image']);
+echo "<img src= '$ROW[post]' style='width:100%;'/>";
    }
 
 ?>
